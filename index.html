@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hawaiʻi Advocate | Attorney Chris Cazares</title>
+<meta name="description" content="Hawaiʻi Advocate is a referral-based law practice led by Attorney Chris Cazares: civil defense, catastrophic injury, and co-counsel and attorney training. Representation by referral only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy-900: #0b1626;
+    --navy-800: #102036;
+    --navy-700: #182c47;
+    --charcoal: #2a2e34;
+    --ink: #1d232b;
+    --muted: #5b6573;
+    --line: #e3e0d8;
+    --paper: #ffffff;
+    --paper-2: #f6f4ef;
+    --gold: #b8975a;
+    --gold-light: #d4bb86;
+    --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --wrap: 1160px;
+    --gutter: clamp(20px, 5vw, 48px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  p { margin: 0 0 1.1em; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 18px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .eyebrow::before { content: ""; width: 32px; height: 1px; background: currentColor; }
+
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.12; margin: 0; color: var(--navy-800); }
+  h2 { font-size: clamp(34px, 4.6vw, 52px); margin-bottom: 24px; letter-spacing: -.005em; }
+  h3 { font-size: 26px; margin-bottom: 12px; }
+  .lede { font-size: 19px; color: var(--charcoal); max-width: 760px; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: fixed; inset: 0 0 auto 0; z-index: 50;
+    background: rgba(11, 22, 38, .0);
+    transition: background .3s ease, box-shadow .3s ease;
+  }
+  .site-header.scrolled { background: rgba(11, 22, 38, .97); box-shadow: 0 1px 0 rgba(184,151,90,.25); }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { text-decoration: none; color: #fff; display: flex; flex-direction: column; line-height: 1; }
+  .brand-name { font-family: var(--serif); font-size: 26px; font-weight: 600; letter-spacing: .04em; }
+  .brand-tag { font-size: 10px; letter-spacing: .3em; color: var(--gold-light); margin-top: 6px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a {
+    color: rgba(255,255,255,.82); text-decoration: none; font-size: 13px; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase; padding: 6px 0; position: relative;
+  }
+  .nav-links a::after {
+    content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold);
+    transition: right .25s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: #fff; }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after { right: 0; }
+  .menu-btn {
+    display: none; background: none; border: 1px solid rgba(255,255,255,.3); color: #fff;
+    width: 44px; height: 44px; border-radius: 2px; cursor: pointer; padding: 0;
+  }
+  .menu-btn span, .menu-btn span::before, .menu-btn span::after {
+    display: block; width: 18px; height: 1.5px; background: #fff; margin: 0 auto; position: relative; transition: .25s;
+  }
+  .menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; }
+  .menu-btn span::before { top: -6px; } .menu-btn span::after { top: 6px; }
+  .menu-open .menu-btn span { background: transparent; }
+  .menu-open .menu-btn span::before { top: 0; transform: rotate(45deg); }
+  .menu-open .menu-btn span::after { top: 0; transform: rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative; min-height: 100vh; min-height: 100svh;
+    display: flex; align-items: center;
+    background:
+      radial-gradient(1200px 600px at 85% 20%, rgba(184,151,90,.10), transparent 60%),
+      linear-gradient(160deg, var(--navy-800) 0%, var(--navy-900) 70%);
+    color: #fff; overflow: hidden; padding: 120px 0 90px;
+  }
+  .hero-lines { position: absolute; inset: auto 0 0 0; width: 100%; height: 55%; opacity: .5; pointer-events: none; }
+  .hero-inner { position: relative; width: 100%; }
+  .hero .eyebrow { color: var(--gold-light); }
+  .hero-title {
+    font-family: var(--serif); font-weight: 600; color: #fff;
+    font-size: clamp(44px, 8.4vw, 104px); line-height: 1; letter-spacing: .01em; margin: 0 0 32px;
+  }
+  .hero-title > span { display: block; }
+  .hero-title .dot { color: var(--gold); }
+  .hero p.hero-copy { font-size: clamp(18px, 2vw, 21px); max-width: 640px; color: rgba(255,255,255,.82); margin-bottom: 40px; }
+  .referral-badge {
+    display: inline-flex; align-items: center; gap: 12px;
+    border: 1px solid rgba(184,151,90,.55); padding: 12px 20px;
+    font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light);
+  }
+  .referral-badge::before { content: ""; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+  .scroll-cue {
+    position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%);
+    width: 1px; height: 56px; background: linear-gradient(var(--gold), transparent);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(80px, 11vw, 136px) 0; }
+  .alt { background: var(--paper-2); }
+  .dark { background: var(--navy-900); color: rgba(255,255,255,.84); }
+  .dark h2, .dark h3 { color: #fff; }
+  .dark .lede { color: rgba(255,255,255,.8); }
+
+  /* Intro + stats */
+  .intro-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+  .stats { display: grid; gap: 0; border-top: 1px solid var(--line); }
+  .stat { display: flex; align-items: baseline; gap: 22px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+  .stat-num { font-family: var(--serif); font-size: 52px; font-weight: 600; color: var(--navy-800); line-height: 1; min-width: 132px; }
+  .stat-label { font-size: 14px; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; }
+
+  /* Commitments */
+  .commitments { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(184,151,90,.25); border: 1px solid rgba(184,151,90,.25); margin-top: 56px; }
+  .commit {
+    background: var(--navy-900); padding: 44px 36px 40px; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; transition: background .25s ease;
+  }
+  .commit:hover, .commit:focus-visible { background: var(--navy-700); }
+  .commit-num { font-family: var(--serif); color: var(--gold); font-size: 18px; margin-bottom: 26px; }
+  .commit-word { font-family: var(--serif); font-size: 40px; font-weight: 600; letter-spacing: .06em; color: #fff; line-height: 1; }
+  .commit-sub { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold-light); margin: 12px 0 22px; }
+  .commit p { font-size: 15.5px; color: rgba(255,255,255,.74); margin: 0 0 28px; flex: 1; }
+  .commit-more { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #fff; }
+  .commit-more::after { content: " \2192"; color: var(--gold); }
+
+  .referral-note {
+    margin-top: 64px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: start;
+    padding-top: 40px; border-top: 1px solid rgba(255,255,255,.12);
+  }
+  .referral-note h3 { font-size: 24px; white-space: nowrap; }
+  .referral-note p { margin: 0; max-width: 680px; }
+
+  /* Practice sections */
+  .practice-head { display: grid; grid-template-columns: 270px 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+  .practice-mark { position: sticky; top: 110px; }
+  .practice-mark .big {
+    font-family: var(--serif); font-size: clamp(40px, 4.2vw, 50px); font-weight: 600; letter-spacing: .04em;
+    color: var(--navy-800); line-height: 1; display: block;
+  }
+  .practice-mark .area { display: block; margin-top: 12px; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .practice-mark .rule { display: block; width: 48px; height: 2px; background: var(--gold); margin-top: 22px; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin: 40px 0; }
+  .card { background: var(--paper); border: 1px solid var(--line); padding: 32px; }
+  .alt .card { background: var(--paper); }
+  .card h3 { font-size: 24px; }
+  .card p { margin: 0; color: var(--charcoal); font-size: 16px; }
+
+  .subhead {
+    font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--navy-800); margin: 48px 0 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .referral-line { font-size: 14px; letter-spacing: .04em; color: var(--muted); font-style: italic; margin-top: 8px; }
+
+  .checklist { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .checklist li { padding: 12px 0 12px 26px; border-bottom: 1px solid var(--line); position: relative; font-size: 16px; }
+  .checklist li::before {
+    content: ""; position: absolute; left: 2px; top: 22px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg);
+  }
+
+  /* About */
+  .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: clamp(40px, 6vw, 88px); align-items: start; }
+  .portrait-col { position: sticky; top: 110px; }
+  .portrait {
+    position: relative; aspect-ratio: 4 / 5; background: linear-gradient(160deg, var(--navy-700), var(--navy-900));
+    display: flex; align-items: center; justify-content: center; overflow: hidden;
+  }
+  .portrait::after { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(184,151,90,.45); pointer-events: none; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; }
+  .portrait-placeholder { text-align: center; color: rgba(255,255,255,.6); }
+  .portrait-placeholder .initials { font-family: var(--serif); font-size: 88px; color: var(--gold-light); line-height: 1; letter-spacing: .04em; }
+  .portrait-placeholder small { display: block; margin-top: 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; }
+  .portrait-caption { margin-top: 22px; }
+  .portrait-caption strong { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--navy-800); display: block; line-height: 1.1; }
+  .portrait-caption span { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+  .creds { list-style: none; padding: 0; margin: 22px 0 0; border-top: 1px solid var(--line); }
+  .creds li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; }
+  .creds li b { font-weight: 600; color: var(--navy-800); }
+
+  .timeline { list-style: none; padding: 0; margin: 12px 0 0; position: relative; }
+  .timeline::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+  .timeline li { position: relative; padding: 0 0 30px 38px; }
+  .timeline li::before {
+    content: ""; position: absolute; left: 0; top: 8px; width: 11px; height: 11px; background: var(--paper);
+    border: 2px solid var(--gold); transform: rotate(45deg);
+  }
+  .timeline h3 { font-size: 23px; margin-bottom: 6px; }
+  .timeline p { margin: 0; color: var(--charcoal); font-size: 16px; }
+
+  .quote {
+    margin: 48px 0; padding: 40px 44px; background: var(--navy-900); color: rgba(255,255,255,.85); position: relative;
+  }
+  .quote::before {
+    content: "\201C"; position: absolute; top: -6px; left: 28px; font-family: var(--serif); font-size: 110px; color: var(--gold); line-height: 1;
+  }
+  .quote h3 { color: #fff; font-size: 26px; margin: 18px 0 14px; }
+  .quote p { margin: 0 0 1em; font-size: 16.5px; }
+  .quote p:last-child { margin: 0; font-family: var(--serif); font-size: 22px; color: var(--gold-light); line-height: 1.4; }
+
+  .quals { columns: 2; column-gap: 32px; list-style: none; padding: 0; margin: 0; }
+  .quals li { break-inside: avoid; padding: 10px 0 10px 24px; position: relative; font-size: 15.5px; border-bottom: 1px solid var(--line); }
+  .quals li::before { content: ""; position: absolute; left: 2px; top: 19px; width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); }
+
+  .bar-table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 15.5px; }
+  .bar-table th, .bar-table td { text-align: left; padding: 14px 12px; border-bottom: 1px solid var(--line); }
+  .bar-table th { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .bar-table td:first-child { font-weight: 600; color: var(--navy-800); }
+  .status { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; }
+  .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #3f7d5a; }
+  .status.inactive { color: var(--muted); }
+  .status.inactive::before { background: #a7adb5; }
+  .fine { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+  /* Referrals */
+  .ref-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+  .ref-card { border-top: 2px solid var(--gold); padding-top: 28px; }
+  .ref-card .n { font-family: var(--serif); font-size: 18px; color: var(--gold); display: block; margin-bottom: 10px; }
+  .ref-card h3 { color: #fff; }
+  .ref-card p { font-size: 16px; margin: 0; color: rgba(255,255,255,.75); }
+  .notice {
+    margin-top: 56px; padding: 22px 26px; border: 1px solid rgba(184,151,90,.4); font-size: 15px; color: rgba(255,255,255,.78);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .notice::before { content: ""; flex: none; margin-top: 8px; width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
+
+  /* Contact */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 48px; }
+  .contact-cell { background: var(--paper); padding: 36px 32px; }
+  .contact-cell .label { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); font-weight: 600; display: block; margin-bottom: 14px; }
+  .contact-cell address, .contact-cell .val { font-style: normal; font-size: 17px; color: var(--ink); line-height: 1.6; }
+  .contact-cell .phone { font-family: var(--serif); font-size: 32px; font-weight: 600; color: var(--navy-800); text-decoration: none; line-height: 1.1; }
+  .contact-cell .phone:hover { color: var(--gold); }
+  .contact-note { margin-top: 40px; max-width: 760px; color: var(--charcoal); }
+
+  /* Footer */
+  footer { background: var(--navy-900); color: rgba(255,255,255,.62); padding: 72px 0 40px; font-size: 14px; }
+  .foot-top { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 40px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .foot-top .brand-name { color: #fff; }
+  .foot-top h4 { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-light); margin: 0 0 14px; font-weight: 600; }
+  .foot-top ul { list-style: none; margin: 0; padding: 0; }
+  .foot-top li { margin-bottom: 6px; }
+  .foot-top a { text-decoration: none; }
+  .foot-top a:hover { color: #fff; }
+  .disclaimer { padding-top: 32px; font-size: 12.5px; line-height: 1.75; color: rgba(255,255,255,.5); }
+  .disclaimer p { margin: 0 0 12px; }
+  .disclaimer strong { color: rgba(255,255,255,.72); font-weight: 600; }
+
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1020px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 12px; letter-spacing: .08em; }
+    .about-grid { grid-template-columns: 320px 1fr; }
+  }
+  @media (max-width: 900px) {
+    .menu-btn { display: block; }
+    .nav-links {
+      position: fixed; inset: 76px 0 auto 0; background: var(--navy-900); flex-direction: column; gap: 0;
+      padding: 8px var(--gutter) 24px; border-top: 1px solid rgba(184,151,90,.25);
+      transform: translateY(-8px); opacity: 0; visibility: hidden; transition: .25s ease;
+    }
+    .menu-open .nav-links { transform: none; opacity: 1; visibility: visible; }
+    .menu-open .site-header { background: var(--navy-900); }
+    .nav-links a { display: block; padding: 16px 0; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav-links a::after { display: none; }
+
+    .intro-grid, .practice-head, .about-grid { grid-template-columns: 1fr; }
+    .practice-mark, .portrait-col { position: static; }
+    .portrait-col { max-width: 420px; }
+    .commitments, .ref-grid, .contact-grid { grid-template-columns: 1fr; }
+    .foot-top { grid-template-columns: 1fr 1fr; }
+    .foot-top > :first-child { grid-column: 1 / -1; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .two-col, .checklist { grid-template-columns: 1fr; }
+    .quals { columns: 1; }
+    .referral-note { grid-template-columns: 1fr; gap: 12px; }
+    .referral-note h3 { white-space: normal; }
+    .stat-num { font-size: 42px; min-width: 104px; }
+    .quote { padding: 36px 24px 28px; }
+    .card { padding: 26px 22px; }
+    .bar-table th, .bar-table td { padding: 12px 6px; }
+    .foot-top { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip" style="position:absolute;left:-9999px;top:0;" onfocus="this.style.left='12px';this.style.top='12px';this.style.zIndex=100;this.style.background='#fff';this.style.padding='8px 12px';" onblur="this.style.left='-9999px';">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Hawaiʻi Advocate, home">
+      <span class="brand-name">HAWAIʻI ADVOCATE</span>
+      <span class="brand-tag">Defend · Protect · Advocate</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#defend">Defend</a></li>
+      <li><a href="#protect">Protect</a></li>
+      <li><a href="#advocate">Advocate</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#referrals">Attorney Referrals</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-label="Introduction">
+    <svg class="hero-lines" viewBox="0 0 1440 400" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="none" stroke="#b8975a" stroke-width="1">
+        <path d="M0 300 C 240 250, 420 170, 640 200 S 1040 300, 1440 180" opacity=".35"/>
+        <path d="M0 330 C 260 280, 460 210, 680 235 S 1060 320, 1440 220" opacity=".25"/>
+        <path d="M0 360 C 280 315, 500 250, 720 270 S 1080 345, 1440 260" opacity=".18"/>
+        <path d="M0 390 C 300 350, 540 290, 760 305 S 1100 370, 1440 300" opacity=".12"/>
+      </g>
+    </svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Attorney Chris Cazares · Honolulu</p>
+      <h1 class="hero-title">
+        <span>Defend<span class="dot">.</span></span>
+        <span>Protect<span class="dot">.</span></span>
+        <span>Advocate<span class="dot">.</span></span>
+      </h1>
+      <p class="hero-copy">We stand with people. We defend their livelihoods, protect their futures, and advocate for them when the stakes are highest.</p>
+      <span class="referral-badge">Representation by referral only</span>
+    </div>
+    <span class="scroll-cue" aria-hidden="true"></span>
+  </section>
+
+  <!-- INTRO -->
+  <section id="overview">
+    <div class="wrap intro-grid">
+      <div class="reveal">
+        <p class="eyebrow">Hawaiʻi Advocate</p>
+        <h2>Experienced Trial Advocacy. Rooted in Community. Built on Trust.</h2>
+        <p class="lede">Hawaiʻi Advocate is a referral-based law practice committed to defending community members and small business owners, protecting individuals and families affected by catastrophic injuries, and collaborating with fellow attorneys on significant litigation.</p>
+        <p>Led by Attorney Chris Cazares, licensed to practice law since 2005 and admitted to the Hawaiʻi Bar in 2011, Hawaiʻi Advocate draws on more than two decades of experience in prosecution, criminal defense, civil litigation, and trial advocacy. Chris has served as a prosecutor, criminal defense attorney, United States Air Force Senior Trial Counsel, and instructor at the Air Force Judge Advocate General’s School. His career includes more than 100 jury trials.</p>
+      </div>
+      <div class="stats reveal" aria-label="At a glance">
+        <div class="stat"><span class="stat-num">100+</span><span class="stat-label">Jury trials</span></div>
+        <div class="stat"><span class="stat-num">2005</span><span class="stat-label">Licensed to practice law</span></div>
+        <div class="stat"><span class="stat-num">2011</span><span class="stat-label">Admitted to the Hawaiʻi Bar</span></div>
+        <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Years of trial advocacy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMITMENTS -->
+  <section class="dark" id="commitments">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Our Three Commitments</p>
+        <h2>Standing beside people when the stakes are highest.</h2>
+      </div>
+      <div class="commitments reveal">
+        <a class="commit" href="#defend">
+          <span class="commit-num">I</span>
+          <span class="commit-word">DEFEND</span>
+          <span class="commit-sub">Civil Defense</span>
+          <p>We defend community members and small business owners facing civil lawsuits, helping protect their livelihoods, financial security, reputations, and futures.</p>
+          <span class="commit-more">Learn more</span>
+        </a>
+        <a class="commit" href="#protect">
+          <span class="commit-num">II</span>
+          <span class="commit-word">PROTECT</span>
+          <span class="commit-sub">Catastrophic Injury</span>
+          <p>We represent individuals and families whose lives have been changed by catastrophic injuries, negligence, and wrongful conduct.</p>
+          <span class="commit-more">Learn more</span>
+        </a>
+        <a class="commit" href="#advocate">
+          <span class="commit-num">III</span>
+          <span class="commit-word">ADVOCATE</span>
+          <span class="commit-sub">Co-Counsel &amp; Attorney Training</span>
+          <p>We collaborate with fellow attorneys on significant litigation, provide trial assistance, and train lawyers in practical courtroom advocacy.</p>
+          <span class="commit-more">Learn more</span>
+        </a>
+      </div>
+      <div class="referral-note reveal">
+        <h3>Representation by Referral Only</h3>
+        <p>Hawaiʻi Advocate accepts legal matters exclusively through referrals. We believe meaningful representation begins with trust, careful case selection, and a commitment to the individuals and attorneys who place their confidence in us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEFEND -->
+  <section id="defend">
+    <div class="wrap practice-head">
+      <div class="practice-mark reveal">
+        <span class="big">DEFEND</span>
+        <span class="area">Civil Defense</span>
+        <span class="rule"></span>
+      </div>
+      <div class="reveal">
+        <h2>Defending Our Community. Protecting What Matters.</h2>
+        <p class="lede">A civil lawsuit can threaten more than financial security. It can threaten a family’s stability, a person’s reputation, or a small business owner’s livelihood.</p>
+        <p>At Hawaiʻi Advocate, we believe community members and small business owners deserve experienced, dedicated representation when they are accused of civil wrongdoing or forced to defend themselves in litigation. We stand beside people who have something meaningful at stake.</p>
+
+        <h3 class="subhead">Who We Defend</h3>
+        <div class="two-col">
+          <div class="card">
+            <h3>Community Members</h3>
+            <p>Individuals facing civil lawsuits involving their property, finances, reputation, or personal responsibilities.</p>
+          </div>
+          <div class="card">
+            <h3>Small Business Owners</h3>
+            <p>Entrepreneurs, professionals, and locally owned businesses confronting claims that may threaten their operations, assets, or future.</p>
+          </div>
+        </div>
+
+        <h3 class="subhead">Our Approach</h3>
+        <p>Every person deserves a fair opportunity to be heard, regardless of the resources available to the opposing party. Chris brings experience from both sides of the courtroom to the defense of community members and small businesses. His approach emphasizes preparation, careful investigation, practical judgment, and a willingness to take a case to trial when necessary.</p>
+        <p class="referral-line">Civil defense matters are accepted by referral only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTECT -->
+  <section class="alt" id="protect">
+    <div class="wrap practice-head">
+      <div class="practice-mark reveal">
+        <span class="big">PROTECT</span>
+        <span class="area">Catastrophic Injury</span>
+        <span class="rule"></span>
+      </div>
+      <div class="reveal">
+        <h2>Protecting People. Pursuing Accountability. Restoring Lives.</h2>
+        <p class="lede">A catastrophic injury can change a person’s life in an instant. The consequences often extend beyond physical pain. They can affect a person’s independence, career, relationships, financial security, and ability to enjoy everyday life.</p>
+        <p>At Hawaiʻi Advocate, we represent individuals and families whose lives have been changed by serious injuries caused by negligence or wrongful conduct.</p>
+
+        <h3 class="subhead">Our Approach</h3>
+        <p>We believe an injury case should tell the complete story of what happened and how a person’s life has changed. That requires more than reviewing medical bills. It requires understanding the individual, the family, and the long-term consequences of the injury.</p>
+        <p>Chris brings extensive jury trial experience and a commitment to thorough case preparation, persuasive presentation, and meaningful accountability. Hawaiʻi Advocate welcomes referrals and co-counsel opportunities involving serious injury and wrongful death litigation.</p>
+        <p class="referral-line">All cases are considered by referral only.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVOCATE -->
+  <section id="advocate">
+    <div class="wrap practice-head">
+      <div class="practice-mark reveal">
+        <span class="big">ADVOCATE</span>
+        <span class="area">Co-Counsel &amp; Attorney Training</span>
+        <span class="rule"></span>
+      </div>
+      <div class="reveal">
+        <h2>Advocating Together. Strengthening Trial Lawyers.</h2>
+        <p class="lede">The most significant cases often benefit from collaboration between experienced attorneys.</p>
+        <p>At Hawaiʻi Advocate, we work alongside other lawyers as co-counsel, trial counsel, and strategic partners in complex civil litigation. We also believe that trial advocacy is a craft that should be studied, practiced, and shared.</p>
+
+        <h3 class="subhead">Co-Counsel and Trial Partnerships</h3>
+        <p>Chris brings more than two decades of experience in criminal and civil litigation, including more than 100 jury trials. Hawaiʻi Advocate welcomes opportunities to collaborate with attorneys seeking additional courtroom experience, trial preparation assistance, or strategic support.</p>
+        <ul class="checklist">
+          <li>Co-counsel representation</li>
+          <li>Trial preparation and strategy</li>
+          <li>Case theory development</li>
+          <li>Jury selection and voir dire</li>
+          <li>Opening statements</li>
+          <li>Direct examination and cross-examination</li>
+          <li>Closing arguments</li>
+          <li>Demonstrative evidence and courtroom presentation</li>
+          <li>Complex liability and damages litigation</li>
+        </ul>
+        <p>Our co-counsel relationships are grounded in mutual respect, clearly defined responsibilities, and a shared commitment to the client.</p>
+
+        <h3 class="subhead">Attorney Training Program</h3>
+        <p>Experience is most valuable when it is shared. Chris served as an instructor at the United States Air Force Judge Advocate General’s School, helping train fellow attorneys in trial advocacy and litigation skills. Through Hawaiʻi Advocate’s attorney training program, Chris continues that commitment by providing practical instruction designed to help attorneys improve their courtroom skills.</p>
+        <ul class="checklist">
+          <li>Developing persuasive case theories</li>
+          <li>Jury selection and connecting with jurors</li>
+          <li>Opening statements and storytelling</li>
+          <li>Direct examination</li>
+          <li>Cross-examination</li>
+          <li>Closing arguments</li>
+          <li>Effective courtroom communication</li>
+          <li>Trial preparation and presentation</li>
+          <li>Authenticity and confidence in the courtroom</li>
+        </ul>
+        <p>Our goal is not to make every lawyer argue or present cases the same way. It is to help attorneys develop the skills, judgment, and confidence to become more effective advocates while remaining authentic to their individual styles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="alt" id="about">
+    <div class="wrap about-grid">
+      <aside class="portrait-col reveal">
+        <div class="portrait">
+          <!-- Replace the placeholder below with: <img src="images/chris-cazares.jpg" alt="Attorney Chris Cazares"> -->
+          <div class="portrait-placeholder" role="img" aria-label="Portrait of Attorney Chris Cazares (photo forthcoming)">
+            <div class="initials">CC</div>
+            <small>Portrait forthcoming</small>
+          </div>
+        </div>
+        <div class="portrait-caption">
+          <strong>Chris Cazares</strong>
+          <span>Trial Attorney · Advocate · Instructor</span>
+        </div>
+        <ul class="creds">
+          <li><span>Licensed</span><b>Since 2005</b></li>
+          <li><span>Hawaiʻi Bar</span><b>Since 2011</b></li>
+          <li><span>Jury trials</span><b>100+</b></li>
+          <li><span>J.D.</span><b>USC Gould, 2004</b></li>
+        </ul>
+      </aside>
+
+      <div>
+        <div class="reveal">
+          <p class="eyebrow">About the Attorney</p>
+          <h2>Trial Attorney. Advocate. Instructor.</h2>
+          <p class="lede">Chris has dedicated his legal career to the practice of trial advocacy, serving as a prosecutor, criminal defense attorney, civil trial lawyer, and instructor to fellow attorneys.</p>
+          <p>A graduate of the University of Southern California Gould School of Law, Chris began his legal career in the United States Air Force Judge Advocate General’s Corps.</p>
+        </div>
+
+        <ol class="timeline reveal" aria-label="Career">
+          <li>
+            <h3>Military Legal Career</h3>
+            <p>Chris served as a prosecutor at F.E. Warren Air Force Base in Cheyenne, Wyoming, before becoming an Area Defense Counsel, representing military service members facing criminal accusations and adverse proceedings. He subsequently served on the defense team in the military commission proceedings involving Abd al-Rahim al-Nashiri, accused in connection with the USS Cole bombing. Chris later served as a Senior Trial Counsel in the United States Air Force, prosecuting serious criminal cases and developing substantial courtroom experience.</p>
+          </li>
+          <li>
+            <h3>Teaching Trial Advocacy</h3>
+            <p>Chris also served as an instructor at the United States Air Force Judge Advocate General’s School. His instructional experience reflects a commitment to developing the courtroom skills of other attorneys. Through Hawaiʻi Advocate, Chris continues that work by collaborating with fellow lawyers and providing practical trial advocacy training.</p>
+          </li>
+          <li>
+            <h3>Private Practice and Civil Litigation</h3>
+            <p>Following his military legal assignments, Chris established a private criminal defense practice, representing individuals facing serious criminal allegations. His career subsequently expanded into plaintiff-side personal injury litigation, representing individuals harmed by negligence and wrongful conduct. Having worked as both a prosecutor and defense attorney, and later in civil litigation, Chris brings a broad perspective to evaluating evidence, developing trial strategy, and presenting cases to juries.</p>
+          </li>
+        </ol>
+
+        <blockquote class="quote reveal">
+          <h3>Philosophy of Advocacy</h3>
+          <p>Chris believes that the role of a trial lawyer is fundamentally about standing beside people when the stakes are highest. Sometimes that means defending a community member or small business owner against a civil lawsuit. Sometimes it means pursuing accountability for a person whose life has been changed by catastrophic injury. And sometimes it means working alongside another attorney to prepare a case for trial or helping develop the skills of the next generation of advocates.</p>
+          <p>Whatever the circumstances, the commitment remains the same: preparation, integrity, independent judgment, and a willingness to stand up for the people who place their trust in him.</p>
+        </blockquote>
+
+        <div class="reveal">
+          <h3 class="subhead">Professional Qualifications and Recognition</h3>
+          <ul class="quals">
+            <li>Juris Doctor, University of Southern California Gould School of Law, 2004</li>
+            <li>Licensed to practice law since 2005</li>
+            <li>Former prosecutor and criminal defense attorney</li>
+            <li>United States Air Force Judge Advocate General’s Corps</li>
+            <li>Former Area Defense Counsel and Senior Trial Counsel</li>
+            <li>Former Air Force JAG School instructor</li>
+            <li>Former member of the Abd al-Rahim al-Nashiri defense team</li>
+            <li>Graduate, Gerry Spence Trial Lawyers College, 2015</li>
+            <li>Washington Super Lawyers selections, 2023–2026</li>
+            <li>National Trial Lawyers Top 100 recognition, listed for 2016</li>
+            <li>More than 100 jury trials throughout his career</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <h3 class="subhead">Bar Admissions</h3>
+          <p>Chris has been a licensed attorney since 2005 and has been admitted to practice in Hawaiʻi since 2011.</p>
+          <table class="bar-table">
+            <thead><tr><th scope="col">Jurisdiction</th><th scope="col">Admitted</th><th scope="col">Status</th></tr></thead>
+            <tbody>
+              <tr><td>Washington</td><td>2005</td><td><span class="status">Active</span></td></tr>
+              <tr><td>Hawaiʻi</td><td>2011</td><td><span class="status">Active</span></td></tr>
+              <tr><td>Texas</td><td>2016</td><td><span class="status">Active</span></td></tr>
+              <tr><td>Arizona</td><td>2018</td><td><span class="status inactive">Inactive</span></td></tr>
+              <tr><td>Oregon</td><td>2025</td><td><span class="status">Active</span></td></tr>
+            </tbody>
+          </table>
+          <p class="fine">Admission years indicate initial admission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERRALS -->
+  <section class="dark" id="referrals">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Attorney Referrals</p>
+        <h2>Professional Relationships Built on Trust.</h2>
+        <p class="lede">Hawaiʻi Advocate accepts new legal matters exclusively through referrals. We recognize that referring a client represents an important professional commitment. Our goal is to honor that trust through thoughtful case evaluation, careful preparation, and direct communication.</p>
+      </div>
+      <div class="ref-grid reveal">
+        <div class="ref-card">
+          <span class="n">01</span>
+          <h3>Refer a Client</h3>
+          <p>We consider referrals involving civil defense for community members and small businesses, catastrophic injuries, wrongful death, and complex civil litigation.</p>
+        </div>
+        <div class="ref-card">
+          <span class="n">02</span>
+          <h3>Partner as Co-Counsel</h3>
+          <p>We work alongside other attorneys on significant cases requiring additional trial experience, strategic assistance, or courtroom representation.</p>
+        </div>
+        <div class="ref-card">
+          <span class="n">03</span>
+          <h3>Attorney Training</h3>
+          <p>Through our attorney training program, we provide practical trial advocacy instruction for lawyers seeking to strengthen their litigation and courtroom skills.</p>
+        </div>
+      </div>
+      <p class="notice reveal">Please do not transmit confidential case materials before appropriate arrangements have been established.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Hawaiʻi Advocate</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-cell">
+          <span class="label">Telephone</span>
+          <a class="phone" href="tel:+18087778332">(808) 777-8332</a>
+          <div class="val" style="margin-top:10px;">hawaiiadvocate.com</div>
+        </div>
+        <div class="contact-cell">
+          <span class="label">Hawaiʻi Physical Address</span>
+          <address>4819 Kilauea Avenue, Suite 7<br>Honolulu, HI 96816</address>
+        </div>
+        <div class="contact-cell">
+          <span class="label">Mailing Address</span>
+          <address>10500 Valley View Road, Suite 100<br>Bothell, WA 98011</address>
+        </div>
+      </div>
+      <div class="contact-note reveal">
+        <h3 class="subhead">Representation by Referral Only</h3>
+        <p>Hawaiʻi Advocate accepts legal matters by referral and meets with prospective clients by appointment. Contacting Hawaiʻi Advocate does not establish an attorney-client relationship. Please do not submit confidential information until representation has been confirmed.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <span class="brand-name" style="font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.04em;">HAWAIʻI ADVOCATE</span>
+        <p style="margin-top:12px;max-width:340px;">Defend. Protect. Advocate. A referral-based law practice led by Attorney Chris Cazares.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#defend">Defend</a></li>
+          <li><a href="#protect">Protect</a></li>
+          <li><a href="#advocate">Advocate</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#referrals">Attorney Referrals</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office</h4>
+        <ul>
+          <li>4819 Kilauea Avenue, Suite 7</li>
+          <li>Honolulu, HI 96816</li>
+          <li style="margin-top:10px;"><a href="tel:+18087778332">(808) 777-8332</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <p><strong>Attorney Advertising.</strong> This website is for general informational purposes only and does not constitute legal advice. Viewing this site or contacting Hawaiʻi Advocate does not create an attorney-client relationship. Prior results do not guarantee a similar outcome.</p>
+      <p><strong>Licensing.</strong> Chris Cazares is licensed to practice law in Hawaiʻi, Washington, Oregon, and Texas, and holds inactive status in Arizona. Hawaiʻi Advocate accepts matters by referral only.</p>
+      <p><strong>Privacy.</strong> Please do not send confidential or time-sensitive information through this website or by phone until representation has been confirmed in writing.</p>
+      <p>© <span id="yr">2026</span> Hawaiʻi Advocate. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.querySelector('.site-header');
+    var btn = document.querySelector('.menu-btn');
+    var body = document.body;
+
+    function onScroll() { header.classList.toggle('scrolled', window.scrollY > 20); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    btn.addEventListener('click', function () {
+      var open = body.classList.toggle('menu-open');
+      btn.setAttribute('aria-expanded', open);
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    });
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        body.classList.remove('menu-open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+    }
+  })();
+</script>
+</body>
+</html>
