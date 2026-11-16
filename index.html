@@ -106,6 +106,14 @@
     color: #fff; overflow: hidden; padding: 120px 0 90px;
   }
   .hero-lines { position: absolute; inset: auto 0 0 0; width: 100%; height: 55%; opacity: .5; pointer-events: none; }
+  .hero-kalo {
+    position: absolute; top: 50%; right: -4%; transform: translateY(-46%);
+    width: min(60vw, 860px); height: auto; pointer-events: none; opacity: .9;
+  }
+  .hero-kalo .kalo-back { opacity: .55; }
+  @media (max-width: 900px) {
+    .hero-kalo { width: 115vw; right: -45vw; opacity: .5; }
+  }
   .hero-inner { position: relative; width: 100%; }
   .hero .eyebrow { color: var(--gold-light); }
   .hero-title {
@@ -359,6 +367,30 @@
         <path d="M0 360 C 280 315, 500 250, 720 270 S 1080 345, 1440 260" opacity=".18"/>
         <path d="M0 390 C 300 350, 540 290, 760 305 S 1100 370, 1440 300" opacity=".12"/>
       </g>
+    </svg>
+    <svg class="hero-kalo" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+      <defs>
+        <!-- Kalo (taro) leaf: peltate, heart-shaped blade with veins radiating from the stem junction -->
+        <symbol id="kalo" viewBox="0 0 400 400">
+          <path fill="#b8975a" fill-opacity=".035" stroke="#b8975a" stroke-opacity=".34" stroke-width="1.2" d="M200 18 C 292 66 372 166 372 268 C 372 340 332 386 288 386 C 248 386 214 362 200 330 C 186 362 152 386 112 386 C 68 386 28 340 28 268 C 28 166 108 66 200 18 Z"/>
+          <g fill="none" stroke="#b8975a" stroke-opacity=".2" stroke-width="1" stroke-linecap="round">
+            <path d="M200 272 L 200 36"/>
+            <path d="M200 272 C 240 300 272 336 292 372"/>
+            <path d="M200 272 C 160 300 128 336 108 372"/>
+            <path d="M200 272 C 262 270 320 276 362 300"/>
+            <path d="M200 272 C 138 270 80 276 38 300"/>
+            <path d="M200 226 C 252 214 306 200 352 190"/>
+            <path d="M200 226 C 148 214 94 200 48 190"/>
+            <path d="M200 176 C 240 158 284 132 318 110"/>
+            <path d="M200 176 C 160 158 116 132 82 110"/>
+            <path d="M200 124 C 226 108 250 88 268 66"/>
+            <path d="M200 124 C 174 108 150 88 132 66"/>
+          </g>
+          <path fill="none" stroke="#b8975a" stroke-opacity=".2" stroke-width="1" stroke-linecap="round" d="M200 272 C 204 320 214 360 230 400"/>
+        </symbol>
+      </defs>
+      <use href="#kalo" x="250" y="40" width="560" height="560" transform="rotate(-18 530 320)"/>
+      <use href="#kalo" x="60" y="330" width="380" height="380" transform="rotate(24 250 520)" class="kalo-back"/>
     </svg>
     <div class="wrap hero-inner">
       <p class="eyebrow">Attorney Chris Cazares · Honolulu</p>
