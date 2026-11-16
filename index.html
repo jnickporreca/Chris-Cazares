@@ -1,10 +1,15 @@
 <!doctype html>
 <html lang="en">
+<script>document.documentElement.className+=" js";</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hawaiʻi Advocate | Attorney Chris Cazares</title>
 <meta name="description" content="Hawaiʻi Advocate is a referral-based law practice led by Attorney Chris Cazares: civil defense, catastrophic injury, and co-counsel and attorney training. Representation by referral only.">
+<meta property="og:title" content="Hawaiʻi Advocate | Attorney Chris Cazares">
+<meta property="og:description" content="Defend. Protect. Advocate. A referral-based law practice in Honolulu.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0b1626">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -287,11 +292,11 @@
   :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
   /* Reveal */
-  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
-  .reveal.in { opacity: 1; transform: none; }
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal { opacity: 1; transform: none; transition: none; }
+    .js .reveal { opacity: 1; transform: none; transition: none; }
   }
 
   /* ---------- Responsive ---------- */
